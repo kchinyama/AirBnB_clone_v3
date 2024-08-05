@@ -13,12 +13,6 @@ app = Flask(__name__)
 app.register_blueprint(app_views)
 
 
-@app.teardown_appcontext
-def closeApp():
-    """closes the storage session of the database"""
-
-    return storage.close()
-
 
 if __name__ == "__main__":
     HOST=getenv('HBNB_API_HOST', '0.0.0.0')
